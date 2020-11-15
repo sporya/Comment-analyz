@@ -1,0 +1,12 @@
+{
+  "name": "Comment-Analyz-sporya",
+  "version": "1.0.0",
+  "description": "Analyz your Text Comment for stop Bad comment text",
+  "main": "index.js",
+  "keywords": [
+        "Comment",
+	"Comment Analyz"
+],
+  "author": "s.porya pai",
+  "license": "ISC"
+}
