@@ -7,7 +7,7 @@ This is a JavaScript package that examines comments through an API and returns v
 Use the package manager [npm](https://www.npmjs.com/) to install Comment-analyz.
 
 ```bash
-npm install Comment-analyz
+npm install Comment-analyz-spp
 ```
 
 # Usage
@@ -17,7 +17,7 @@ const AnalyzeCommentText =require('./');
 ```
 or
 ```javascript
-import AnalyzeCommentText from "Comment-analyz";
+import AnalyzeCommentText from "Comment-analyz-spp";
 ```
 in the index.js file you can find displayresult(), you can change the result massage in:
 
