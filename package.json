@@ -1,5 +1,6 @@
 {
-  "name": "Comment-Analyz-sporya",
+  "name": "comment-analyz-spp",
+
   "version": "1.0.0",
   "description": "Analyz your Text Comment for stop Bad comment text",
   "main": "index.js",
@@ -13,4 +14,6 @@
     "axios": "^0.21.0",
     "qs": "^6.9.4"
   }
+  
 }
+
