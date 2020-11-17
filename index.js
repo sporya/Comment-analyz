@@ -1,6 +1,9 @@
+'use strict';
 
 const Qs = require('./node_modules/qs');
 const axios= require('./node_modules/axios');
+
+
 
      // Text-Processing API Url
      const API_URL = 'https://japerk-text-processing.p.rapidapi.com/sentiment/';
@@ -11,65 +14,64 @@ const axios= require('./node_modules/axios');
        , 'Content-Type': 'application/x-www-form-urlencoded'
      };
 
-
-
-     module.exports = function AnalyzeCommentText(Commenttxt) {
-    
-       const commentElement = Commenttxt;
-     
-       if (!commentElement) {
-               return handleEmptyComment();
-       }
-       if(commentElement){
-         return displayResult(commentElement);
-       }
-      
-   
-      
-     };
+ 
      
      function handleEmptyComment() {
        return 'Your comment is empty';
      };
-     function displayResult (comment) {
+
+
+  function displayResult (comment) {
        
       const datacoment = {
                text: comment
                , language: 'english'
        };
-      
        const formattedData = Qs.stringify(datacoment);
      
-       
-       axios.post(API_URL, formattedData, { headers: REQUEST_HEADERS })
+
+  const axioss= axios.post(API_URL, formattedData, { headers: REQUEST_HEADERS })
                .then(response => {
+
+
                 var resultText = '';
+             
                  const data = response.data;
+
                  switch (data.label) {
                   case 'pos':
-                      resultText = 'Wow! Your comment is very positive!';
-                      break;
+                      resultText = 'Posetiv Comment';
+                      return resultText;
+                      
                   case 'neg':
-                      resultText = 'Negative comment =(';
-                      break;
+                      resultText = 'negativ comment';
+                      return resultText;
+                      
                   case 'neutral':
-                      resultText = 'Simple comment =)';
-                      break;
+                      resultText = 'meutral coment';
+                      return resultText;
+                    
                   default:
                       resultText = 'Hmmm, cant understand your comment';
+                      return resultText;
               }
-              const resultElement = resultText
-      
-              if (resultElement){
-                console.log(resultElement);
-                
-              }
-              if(!resultElement){
-                console.log('false');
-              }
-              return 'resultElement';
+
                })
                .catch(error => console.error(error))
-     
+                 const resultElement = axioss;
+                
+                 return resultElement;
+               
      };
+
+     module.exports = function AnalyzeCommentText(Commenttxt) {
+      const commentElement = Commenttxt;
+      if (!commentElement) {
+        return handleEmptyComment();
+      }
+      if (commentElement) {
+        return displayResult(commentElement);
       
+      }
+    }
+  
